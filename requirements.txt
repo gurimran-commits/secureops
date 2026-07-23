@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+scapy
+pandas
+numpy
+psutil
+requests
+reportlab
+PyQt6
+pyqtgraph
+pydantic
+pydantic-settings
+python-multipart
+jinja2
+matplotlib
+pytest

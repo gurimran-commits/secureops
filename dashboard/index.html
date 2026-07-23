@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SecureOps Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="SecureOps navigation">
+        <div class="brand-mark">SO</div>
+        <nav>
+          <a href="#overview" class="active">Overview</a>
+          <a href="#signals">Signals</a>
+          <a href="#alerts-panel">Alerts</a>
+          <a href="#packets-panel">Packets</a>
+        </nav>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Security operations center</p>
+            <h1>SecureOps</h1>
+            <p id="status">Checking service status...</p>
+          </div>
+          <div class="actions">
+            <button id="startCapture" type="button">Start Capture</button>
+            <button id="demoTraffic" type="button" class="accent">Demo Traffic</button>
+            <button id="stopCapture" type="button" class="secondary">Stop</button>
+          </div>
+        </header>
+
+        <section id="overview" class="metrics" aria-label="Traffic metrics">
+          <article>
+            <span>Total Packets</span>
+            <strong id="totalPackets">0</strong>
+            <div class="meter"><i id="packetMeter"></i></div>
+          </article>
+          <article>
+            <span>Packets / Sec</span>
+            <strong id="pps">0</strong>
+            <div class="meter cyan"><i id="ppsMeter"></i></div>
+          </article>
+          <article>
+            <span>Unique Sources</span>
+            <strong id="uniqueSources">0</strong>
+            <div class="dotline" id="sourceDots"></div>
+          </article>
+          <article>
+            <span>Alerts</span>
+            <strong id="alertCount">0</strong>
+            <div class="severity-pill" id="severityPill">quiet</div>
+          </article>
+        </section>
+
+        <section id="signals" class="dashboard-grid">
+          <article class="panel span-7">
+            <div class="panel-title">
+              <h2>Live Traffic Shape</h2>
+              <span id="windowLabel">60s window</span>
+            </div>
+            <div id="trafficBars" class="bars" aria-label="Traffic bar chart"></div>
+          </article>
+
+          <article class="panel span-5">
+            <div class="panel-title">
+              <h2>Protocols</h2>
+              <span>distribution</span>
+            </div>
+            <div id="protocols" class="protocol-rings"></div>
+          </article>
+
+          <article class="panel span-5">
+            <div class="panel-title">
+              <h2>Top Sources</h2>
+              <span>packet volume</span>
+            </div>
+            <div id="sources" class="list"></div>
+          </article>
+
+          <article class="panel span-7" id="alerts-panel">
+            <div class="panel-title">
+              <h2>Recent Alerts</h2>
+              <span>detection events</span>
+            </div>
+            <div id="alerts" class="alerts"></div>
+          </article>
+
+          <article class="panel span-12" id="packets-panel">
+            <div class="panel-title">
+              <h2>Recent Packets</h2>
+              <span>normalized capture events</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Protocol</th>
+                    <th>Size</th>
+                  </tr>
+                </thead>
+                <tbody id="packets"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

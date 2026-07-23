@@ -1,0 +1,9 @@
+{
+    "syn_threshold": 100,
+    "udp_threshold": 100,
+    "icmp_threshold": 100,
+    "refresh_interval": 1,
+    "max_packets": 100,
+    "default_interface": "eth0",
+    "theme": "Dark SOC"
+}
