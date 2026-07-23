@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environments
+secureops-env/
+venv/
+
+# Environment variables / Secrets
+.env
+.env.local
+
+# Databases
+data/*.sqlite3
+data/*.db
+*.sqlite3
+*.db
+
+# Reports
+reports/*.pdf
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Pytest
+.pytest_cache/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# OS files
+.DS_Store
+Thumbs.db
